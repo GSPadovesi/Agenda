@@ -1,0 +1,27 @@
+@charset "UTF-8";
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background: #403E3E;
+}
+
+h1{
+    text-align: center;
+    color: #60F480;
+    margin: 150px;
+}
+
+button{
+    border-radius: 120px;
+    background-color: rgb(88, 255, 163);
+    color: rgb(88, 255, 163);
+    border: 15px solid;
+    border-radius: 20px;
+    margin-left: 900px;
+}
+
+a{
+    color: white;
+}
