@@ -11,7 +11,7 @@
 <title>Agenda de Contatos</title>
 </head>
 <body>
-	<h1>Agenda de contato</h1>
-	<a href="">Novo Contato</a>
+	<h1>Agenda de contatos</h1>
+	<a href="" class="Botao">Novo Contato</a>
 </body>
 </html>
