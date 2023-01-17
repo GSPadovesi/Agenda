@@ -12,6 +12,6 @@
 </head>
 <body>
 	<h1>Agenda de contatos</h1>
-	<a href="" class="Botao">Novo Contato</a>
+	<a href="novo.html" class="Botao">Novo Contato</a>
 </body>
 </html>
