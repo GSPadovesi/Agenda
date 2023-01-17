@@ -18,6 +18,6 @@ function validar(){
 		formContato.fone.focus();
 		return false;
 	} else {
-		document.forms["frmContato"].submit();	
+		document.forms["formContato"].submit();	
 	}
 } 

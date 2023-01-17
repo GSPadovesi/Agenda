@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import model.DAO;
 import model.JavaBeans;
 
-@WebServlet(urlPatterns = { "/Controller", "/main" })
+@WebServlet(urlPatterns = { "/Controller", "/main", "/insert" })
 public class Controller extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -29,6 +29,10 @@ public class Controller extends HttpServlet {
 		String action = request.getServletPath();
 		if (action.equals("/main")) {
 			contatos(request, response);
+		} else if(action.equals("/insert")) {
+			novoContato(request, response);
+		} else {
+			response.sendRedirect("index.html");
 		}
 		dao.testeConexao();
 	}
@@ -37,6 +41,15 @@ public class Controller extends HttpServlet {
 	protected void contatos(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		response.sendRedirect("Agenda.jsp");
+	}
+	
+	/** Novo Contato **/
+	protected void novoContato(HttpServletRequest request, HttpServletResponse response)
+		throws ServletException, IOException{
+		
+		this.contato.setNome(request.getParameter("nome"));
+		this.contato.setFone(request.getParameter("fone"));
+		this.contato.setEmail(request.getParameter("email"));
 	}
 
 }
