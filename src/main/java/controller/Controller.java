@@ -47,9 +47,13 @@ public class Controller extends HttpServlet {
 	protected void novoContato(HttpServletRequest request, HttpServletResponse response)
 		throws ServletException, IOException{
 		
+		/** Atribuindo o valor do formContato para os atributos da class JavaBeans - (nome, fone, email) **/
 		this.contato.setNome(request.getParameter("nome"));
 		this.contato.setFone(request.getParameter("fone"));
 		this.contato.setEmail(request.getParameter("email"));
+		
+		this.dao.inserirContato(contato);
+		response.sendRedirect("main");
 	}
 
 }

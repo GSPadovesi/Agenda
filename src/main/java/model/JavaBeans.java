@@ -25,7 +25,7 @@ public class JavaBeans {
 		this.idcon = idcon;
 	}
 	
-	public String nome() {
+	public String getNome() {
 		return this.nome;
 	}
 	
