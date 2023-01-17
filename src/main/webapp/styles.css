@@ -30,6 +30,22 @@ img{
 	font-size: 1.2em;
 	font-weight: 700;
 	border-radius: 5px;
+	margin-left: 46em;
+	border: 0;
+	cursor: pointer;
+	margin-top: 8rem;
+}
+
+.Botao1{
+	text-decoration: none;
+	text-align: center;
+	margin: auto;
+	background-color: #60F480;
+	padding: 5px 10px 5px 10px;
+	color: #fff;
+	font-size: 1.2em;
+	font-weight: 700;
+	border-radius: 5px;
 	margin-left: 48em;
 	border: 0;
 	cursor: pointer;
@@ -44,6 +60,7 @@ img{
 table {
     width: 10% !important; /*Importante manter o !important rs */
     margin: auto;
+    margin-bottom: 4rem;
 }
 
 .Input1{
@@ -61,5 +78,46 @@ table {
 	border: 1px solid #60F480;
 	border-radius: 5px;
 }
+
+.table-style{
+	border-collapse: collapse;
+    font-size: 0.9em;
+    min-width: 400px;
+    box-shadow: 0 0 20px #60F480;
+}
+
+.table-style thead tr{
+	background-color: #60F480;
+    color: #ffffff;
+    text-align: center;
+}
+
+.table-style tbody tr{
+    color: #ffffff;
+    text-align: center;
+}
+
+.table-style th,
+.table-style td{
+	padding: 12px 15px;
+}
+
+.table-style tbody tr {
+    border-bottom: 1px solid #60F480;
+}
+
+.table-style  tbody tr:nth-of-type(even) {
+    background-color: #60f480;
+}
+
+.table-style tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+.table-style tbody tr.active-row {
+    font-weight: bold;
+    color: #009879;
+}
+
 
 
