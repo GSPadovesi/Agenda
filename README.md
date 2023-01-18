@@ -15,6 +15,7 @@ Gabriel Santana Padovesi
 * nome - Obrigatório  
 * fone - Obrigatório
 * email - opcional
+* Irei disponibilizar o arquivo .sql do projeto
 
 ## lICENÇA
 * - Este projeto foi criado apenas PARA FINS EDUCATIVOS SOB A LICENÇA MIT - Consulte o arquivo LICENSE.md para detalhes.
