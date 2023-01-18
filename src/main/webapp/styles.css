@@ -104,6 +104,13 @@ table {
 	border-radius: 5px;
 }
 
+#Input3{
+	padding: 5px;
+	margin-bottom: 10px;
+	border: 1px solid #403E3E;
+	border-radius: 5px;
+}
+
 .table-style{
 	border-collapse: collapse;
     font-size: 0.9em;
