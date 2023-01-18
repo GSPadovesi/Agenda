@@ -1,6 +1,7 @@
 package model;
 
 import java.sql.Connection;
+
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -82,14 +83,14 @@ public class DAO {
 	}
 
 	public void inserirContato(JavaBeans contato) {
-		String sqlInsert = "insert into contatos(nome,fone,email) values (?,?,?);";
+		String insert = "insert into contatos(nome,fone,email) values (?,?,?);";
 		try {
 			/**
 			 * Estabelecendo a conexão e criando a query para ser executada no banco de
 			 * dados
 			 **/
 			Connection con = conectar();
-			PreparedStatement pst = con.prepareStatement(sqlInsert);
+			PreparedStatement pst = con.prepareStatement(insert);
 
 			/** Atribuindo o valor dos atributos da class JavaBeans ao banco de dados **/
 			pst.setString(1, contato.getNome());
@@ -103,5 +104,47 @@ public class DAO {
 			System.out.println(e);
 		}
 	}
+	
+	public void selecionarContato(JavaBeans contato) {
+		String read = "select * from contatos where idcon = ?";
+		try {
+			
+			Connection con = conectar();
+			PreparedStatement pst = con.prepareStatement(read);
+			pst.setString(1, contato.getIdcon());
+			ResultSet rs = pst.executeQuery();
+			
+			while(rs.next()) {
+				/** Setar as variaveis JavaBeans **/
+				
+				contato.setIdcon(rs.getString(1));
+				contato.setNome(rs.getString(2));
+				contato.setFone(rs.getString(3));
+				contato.setEmail(rs.getString(4));
+				
+			}
+			
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+	}
+	
+	public void editarContato(JavaBeans contato) {
+		String update = "update contatos set nome=?,fone=?,email=? where idcon = ?;";
+		try {
+			Connection con = conectar();
+			PreparedStatement pst = con.prepareStatement(update);
+			
+			pst.setString(1, contato.getNome());
+			pst.setString(2, contato.getFone());
+			pst.setString(3, contato.getEmail());
+			
+			pst.executeUpdate();
+			con.close();
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+	}
+	
 
 }

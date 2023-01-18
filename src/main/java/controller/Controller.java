@@ -1,6 +1,7 @@
 package controller;
 
 import java.io.IOException;
+
 import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
@@ -13,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import model.DAO;
 import model.JavaBeans;
 
-@WebServlet(urlPatterns = { "/Controller", "/main", "/insert" })
+@WebServlet(urlPatterns = { "/Controller", "/main", "/insert", "/select", "/update", "/delete" })
 public class Controller extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -29,10 +30,13 @@ public class Controller extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String action = request.getServletPath();
+		System.out.println(action);
 		if (action.equals("/main")) {
 			contatos(request, response);
 		} else if(action.equals("/insert")) {
 			novoContato(request, response);
+		} else if(action.equals("/select")){
+			listarContato(request, response);
 		} else {
 			response.sendRedirect("index.html");
 		}
@@ -64,5 +68,19 @@ public class Controller extends HttpServlet {
 		this.dao.inserirContato(contato);
 		response.sendRedirect("main");
 	}
-
+	
+	protected void listarContato(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException{
+		
+		/** Receber o id do contato que será editado - (idcon - select) **/
+		String idcon = request.getParameter("idcon");
+		
+		this.contato.setIdcon(idcon);
+		dao.selecionarContato(contato);
+		
+		System.out.println(contato.getIdcon());
+		System.out.println(contato.getNome());
+		System.out.println(contato.getFone());
+		System.out.println(contato.getEmail());
+	}
 }
