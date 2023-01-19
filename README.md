@@ -1,7 +1,7 @@
 # Agenda
 ![GitHub](https://img.shields.io/github/license/GabrielSantanaP/Filmes-e-Series?style=for-the-badge)
 # Aplicação Web em Java 
-- Em desenvolvimento
+Aplicação Web - Foi desenvolvido uma agenda aonde o usuário pode adicionar contato, editar e excluir. Também tem a opção de gerar um relatório listando todos os contatos adicionados até o momento
 
 # Autor
 Gabriel Santana Padovesi
