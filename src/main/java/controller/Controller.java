@@ -39,6 +39,8 @@ public class Controller extends HttpServlet {
 			listarContato(request, response);
 		} else if(action.equals("/update")) {
 			editarContato(request, response);
+		} else if(action.equals("/delete")) {
+			deletarContato(request, response);
 		} else {
 			response.sendRedirect("index.html");
 		}
@@ -104,4 +106,17 @@ public class Controller extends HttpServlet {
 		response.sendRedirect("main");
 		
 		}
+	
+	protected void deletarContato(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException{
+		
+		//recebimento do id do contato a ser excluido (Confirmador.js)
+		String idcon = request.getParameter("idcon");
+		
+		this.contato.setIdcon(idcon);
+		
+		this.dao.deletarContato(contato);
+		response.sendRedirect("main");
+				
+	}
 }
