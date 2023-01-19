@@ -37,6 +37,8 @@ public class Controller extends HttpServlet {
 			novoContato(request, response);
 		} else if(action.equals("/select")){
 			listarContato(request, response);
+		} else if(action.equals("/update")) {
+			editarContato(request, response);
 		} else {
 			response.sendRedirect("index.html");
 		}
@@ -69,6 +71,7 @@ public class Controller extends HttpServlet {
 		response.sendRedirect("main");
 	}
 	
+	/** setar campos da pagina de editar com as informações do idcon **/
 	protected void listarContato(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException{
 		
@@ -88,4 +91,17 @@ public class Controller extends HttpServlet {
 		RequestDispatcher rd = request.getRequestDispatcher("editar.jsp");
 		rd.forward(request, response);
 	}
+	
+	protected void editarContato(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		
+		this.contato.setIdcon(request.getParameter("idcon"));
+		this.contato.setNome(request.getParameter("nome"));
+		this.contato.setFone(request.getParameter("fone"));
+		this.contato.setEmail(request.getParameter("email"));
+		
+		this.dao.editarContato(contato);
+		response.sendRedirect("main");
+		
+		}
 }

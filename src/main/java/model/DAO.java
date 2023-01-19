@@ -138,6 +138,7 @@ public class DAO {
 			pst.setString(1, contato.getNome());
 			pst.setString(2, contato.getFone());
 			pst.setString(3, contato.getEmail());
+			pst.setString(4, contato.getIdcon());
 			
 			pst.executeUpdate();
 			con.close();
